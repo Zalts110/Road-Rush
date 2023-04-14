@@ -205,7 +205,7 @@ private void gameOver()
 
     private void initGame()
     {
-        for (int i = 0; i < numOfLanes; i++)
+        for (int i = 0; i < maxRow; i++)
         {
             for (int j = 0; j < 3; j++)
             {
