@@ -84,13 +84,15 @@
         android:layout_marginTop="50dp"
         android:layout_marginBottom="80dp"
         android:layout_weight="8"
-        android:columnCount="3"
+        android:columnCount="5"
         android:rowCount="8">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/main_grid_0_0"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:layout_row="0"
+            android:layout_column="0"
             android:layout_gravity="fill"
             android:layout_margin="1dp"
             android:scaleX="0.8"
@@ -102,6 +104,8 @@
             android:id="@+id/main_grid_0_1"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:layout_row="0"
+            android:layout_column="1"
             android:layout_gravity="fill"
             android:layout_margin="1dp"
             android:scaleX="0.8"
@@ -113,6 +117,8 @@
             android:id="@+id/main_grid_0_2"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:layout_row="0"
+            android:layout_column="2"
             android:layout_gravity="fill"
             android:layout_margin="1dp"
             android:scaleX="0.8"
@@ -120,23 +126,52 @@
             app:srcCompat="@drawable/ic_icon_ryno"
             android:visibility="invisible"/>
 
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_grid_0_3"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="0"
+            android:layout_column="3"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            app:srcCompat="@drawable/ic_icon_ryno"
+            android:visibility="invisible"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_grid_0_4"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="0"
+            android:layout_column="4"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            app:srcCompat="@drawable/ic_icon_ryno"
+            android:visibility="invisible"/>
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/main_grid_1_0"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:layout_row="1"
+            android:layout_column="0"
             android:layout_gravity="fill"
             android:layout_margin="1dp"
             android:scaleX="0.8"
             android:scaleY="0.8"
+            android:visibility="invisible"
             app:srcCompat="@drawable/ic_icon_ryno_white"
-            tools:visibility="visible"
-            android:visibility="invisible"/>
+            tools:visibility="visible" />
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/main_grid_1_1"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:layout_row="1"
+            android:layout_column="1"
             android:layout_gravity="fill"
             android:layout_margin="1dp"
             android:scaleX="0.8"
@@ -148,6 +183,8 @@
             android:id="@+id/main_grid_1_2"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:layout_row="1"
+            android:layout_column="2"
             android:layout_gravity="fill"
             android:layout_margin="1dp"
             android:scaleX="0.8"
@@ -156,9 +193,39 @@
             android:visibility="invisible"/>
 
         <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_grid_1_3"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="1"
+            android:layout_column="3"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            app:srcCompat="@drawable/ic_icon_ryno_white"
+            tools:visibility="visible"
+            android:visibility="invisible"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_grid_1_4"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="1"
+            android:layout_column="4"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            app:srcCompat="@drawable/ic_icon_ryno_white"
+            tools:visibility="visible"
+            android:visibility="invisible"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/main_grid_2_0"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:layout_row="2"
+            android:layout_column="0"
             android:layout_gravity="fill"
             android:layout_margin="1dp"
             android:scaleX="0.8"
@@ -170,6 +237,8 @@
             android:id="@+id/main_grid_2_1"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:layout_row="2"
+            android:layout_column="1"
             android:layout_gravity="fill"
             android:layout_margin="1dp"
             android:scaleX="0.8"
@@ -182,6 +251,34 @@
             android:id="@+id/main_grid_2_2"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:layout_row="2"
+            android:layout_column="2"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            app:srcCompat="@drawable/ic_icon_ryno"
+            android:visibility="invisible"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_grid_2_3"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="2"
+            android:layout_column="3"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            app:srcCompat="@drawable/ic_icon_ryno"
+            android:visibility="invisible"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_grid_2_4"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="2"
+            android:layout_column="4"
             android:layout_gravity="fill"
             android:layout_margin="1dp"
             android:scaleX="0.8"
@@ -193,6 +290,8 @@
             android:id="@+id/main_grid_3_0"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:layout_row="3"
+            android:layout_column="0"
             android:layout_gravity="fill"
             android:layout_margin="1dp"
             android:scaleX="0.8"
@@ -204,6 +303,8 @@
             android:id="@+id/main_grid_3_1"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:layout_row="3"
+            android:layout_column="1"
             android:layout_gravity="fill"
             android:layout_margin="1dp"
             android:scaleX="0.8"
@@ -215,6 +316,34 @@
             android:id="@+id/main_grid_3_2"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:layout_row="3"
+            android:layout_column="2"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            app:srcCompat="@drawable/ic_icon_ryno_white"
+            android:visibility="invisible"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_grid_3_3"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="3"
+            android:layout_column="3"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            app:srcCompat="@drawable/ic_icon_ryno_white"
+            android:visibility="invisible"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_grid_3_4"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="3"
+            android:layout_column="4"
             android:layout_gravity="fill"
             android:layout_margin="1dp"
             android:scaleX="0.8"
@@ -226,6 +355,8 @@
             android:id="@+id/main_grid_4_0"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:layout_row="4"
+            android:layout_column="0"
             android:layout_gravity="fill"
             android:layout_margin="1dp"
             android:scaleX="0.8"
@@ -237,6 +368,8 @@
             android:id="@+id/main_grid_4_1"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:layout_row="4"
+            android:layout_column="1"
             android:layout_gravity="fill"
             android:layout_margin="1dp"
             android:scaleX="0.8"
@@ -248,6 +381,34 @@
             android:id="@+id/main_grid_4_2"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:layout_row="4"
+            android:layout_column="2"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            app:srcCompat="@drawable/ic_icon_ryno"
+            android:visibility="invisible"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_grid_4_3"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="4"
+            android:layout_column="3"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            app:srcCompat="@drawable/ic_icon_ryno"
+            android:visibility="invisible"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_grid_4_4"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="4"
+            android:layout_column="4"
             android:layout_gravity="fill"
             android:layout_margin="1dp"
             android:scaleX="0.8"
@@ -259,6 +420,8 @@
             android:id="@+id/main_grid_5_0"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:layout_row="5"
+            android:layout_column="0"
             android:layout_gravity="fill"
             android:layout_margin="1dp"
             android:scaleX="0.8"
@@ -270,6 +433,8 @@
             android:id="@+id/main_grid_5_1"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:layout_row="5"
+            android:layout_column="1"
             android:layout_gravity="fill"
             android:layout_margin="1dp"
             android:scaleX="0.8"
@@ -281,6 +446,34 @@
             android:id="@+id/main_grid_5_2"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:layout_row="5"
+            android:layout_column="2"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            app:srcCompat="@drawable/ic_icon_ryno_white"
+            android:visibility="invisible"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_grid_5_3"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="5"
+            android:layout_column="3"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            app:srcCompat="@drawable/ic_icon_ryno_white"
+            android:visibility="invisible"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_grid_5_4"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="5"
+            android:layout_column="4"
             android:layout_gravity="fill"
             android:layout_margin="1dp"
             android:scaleX="0.8"
@@ -292,6 +485,8 @@
             android:id="@+id/main_grid_6_0"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:layout_row="6"
+            android:layout_column="0"
             android:layout_gravity="fill"
             android:layout_margin="1dp"
             android:scaleX="0.8"
@@ -303,6 +498,8 @@
             android:id="@+id/main_grid_6_1"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:layout_row="6"
+            android:layout_column="1"
             android:layout_gravity="fill"
             android:layout_margin="1dp"
             android:scaleX="0.8"
@@ -314,6 +511,34 @@
             android:id="@+id/main_grid_6_2"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:layout_row="6"
+            android:layout_column="2"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            app:srcCompat="@drawable/ic_icon_ryno"
+            android:visibility="invisible"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_grid_6_3"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="6"
+            android:layout_column="3"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            app:srcCompat="@drawable/ic_icon_ryno"
+            android:visibility="invisible"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_grid_6_4"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="6"
+            android:layout_column="4"
             android:layout_gravity="fill"
             android:layout_margin="1dp"
             android:scaleX="0.8"
@@ -336,7 +561,8 @@
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
             android:layout_margin="1dp"
-            app:srcCompat="@drawable/ic_icon_car" />
+            app:srcCompat="@drawable/ic_icon_car"
+            android:visibility="invisible"/>
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/main_grid_7_2"
@@ -345,9 +571,472 @@
             android:layout_gravity="fill"
             android:layout_margin="1dp"
             app:srcCompat="@drawable/ic_icon_car"
+            />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_grid_7_3"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            app:srcCompat="@drawable/ic_icon_car"
             android:visibility="invisible"/>
 
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_grid_7_4"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            app:srcCompat="@drawable/ic_icon_car"
+            android:visibility="invisible"/>
 
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/coin_0_0"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            app:srcCompat="@drawable/coin"
+            android:visibility="invisible"/>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/coin_0_1"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            app:srcCompat="@drawable/coin"
+            android:visibility="invisible"/>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/coin_0_2"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="0"
+            android:layout_column="2"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            app:srcCompat="@drawable/coin"
+            android:visibility="invisible"/>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/coin_0_3"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="0"
+            android:layout_column="3"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            app:srcCompat="@drawable/coin"
+            android:visibility="invisible"/>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/coin_0_4"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="0"
+            android:layout_column="4"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            app:srcCompat="@drawable/coin"
+            android:visibility="invisible"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/coin_1_0"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            app:srcCompat="@drawable/coin"
+            android:visibility="invisible"/>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/coin_1_1"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            app:srcCompat="@drawable/coin"
+            android:visibility="invisible"/>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/coin_1_2"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="1"
+            android:layout_column="2"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            app:srcCompat="@drawable/coin"
+            android:visibility="invisible"/>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/coin_1_3"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="1"
+            android:layout_column="3"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            app:srcCompat="@drawable/coin"
+            android:visibility="invisible"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/coin_1_4"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="1"
+            android:layout_column="4"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            app:srcCompat="@drawable/coin"
+            android:visibility="invisible"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/coin_2_0"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            app:srcCompat="@drawable/coin"
+            android:visibility="invisible"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/coin_2_1"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            app:srcCompat="@drawable/coin"
+            android:visibility="invisible"/>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/coin_2_2"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="2"
+            android:layout_column="2"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            app:srcCompat="@drawable/coin"
+            android:visibility="invisible"/>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/coin_2_3"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="2"
+            android:layout_column="3"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            app:srcCompat="@drawable/coin"
+            android:visibility="invisible"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/coin_2_4"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="2"
+            android:layout_column="4"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            app:srcCompat="@drawable/coin"
+            android:visibility="invisible"/>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/coin_3_0"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="3"
+            android:layout_column="0"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            app:srcCompat="@drawable/coin"
+            android:visibility="invisible"/>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/coin_3_1"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="3"
+            android:layout_column="1"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            app:srcCompat="@drawable/coin"
+            android:visibility="invisible"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/coin_3_2"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="3"
+            android:layout_column="2"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            app:srcCompat="@drawable/coin"
+            android:visibility="invisible"/>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/coin_3_3"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="3"
+            android:layout_column="3"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            app:srcCompat="@drawable/coin"
+            android:visibility="invisible"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/coin_3_4"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="3"
+            android:layout_column="4"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            app:srcCompat="@drawable/coin"
+            android:visibility="invisible"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/coin_4_0"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="4"
+            android:layout_column="0"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            app:srcCompat="@drawable/coin"
+            android:visibility="invisible"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/coin_4_1"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="4"
+            android:layout_column="1"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            app:srcCompat="@drawable/coin"
+            android:visibility="invisible"/>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/coin_4_2"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="4"
+            android:layout_column="2"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            app:srcCompat="@drawable/coin"
+            android:visibility="invisible"/>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/coin_4_3"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="4"
+            android:layout_column="3"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            app:srcCompat="@drawable/coin"
+            android:visibility="invisible"/>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/coin_4_4"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="4"
+            android:layout_column="4"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            app:srcCompat="@drawable/coin"
+            android:visibility="invisible"/>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/coin_5_0"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="5"
+            android:layout_column="0"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            app:srcCompat="@drawable/coin"
+            android:visibility="invisible"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/coin_5_1"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="5"
+            android:layout_column="1"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            app:srcCompat="@drawable/coin"
+            android:visibility="invisible"/>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/coin_5_2"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="5"
+            android:layout_column="2"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            app:srcCompat="@drawable/coin"
+            android:visibility="invisible"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/coin_5_3"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="5"
+            android:layout_column="3"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            app:srcCompat="@drawable/coin"
+            android:visibility="invisible"/>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/coin_5_4"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="5"
+            android:layout_column="4"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            app:srcCompat="@drawable/coin"
+            android:visibility="invisible"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/coin_6_0"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="6"
+            android:layout_column="0"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            app:srcCompat="@drawable/coin"
+            android:visibility="invisible"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/coin_6_1"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="6"
+            android:layout_column="1"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            app:srcCompat="@drawable/coin"
+            android:visibility="invisible"/>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/coin_6_2"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="6"
+            android:layout_column="2"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            app:srcCompat="@drawable/coin"
+            android:visibility="invisible"/>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/coin_6_3"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="6"
+            android:layout_column="3"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            app:srcCompat="@drawable/coin"
+            android:visibility="invisible"/>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/coin_6_4"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_row="6"
+            android:layout_column="4"
+            android:layout_gravity="fill"
+            android:layout_margin="1dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            app:srcCompat="@drawable/coin"
+            android:visibility="invisible"/>
     </GridLayout>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/main_LBL_score"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="000"
+        android:textColor="#FF8BC34A"
+        android:textSize="32sp"
+        android:textStyle="bold" />
 
 </RelativeLayout>
