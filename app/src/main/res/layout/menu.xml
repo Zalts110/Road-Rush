@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_200">
+
+    <TextView
+        android:id="@+id/menuTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MENU"
+        android:textStyle="bold"
+        android:textSize="32sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/fastModeButton"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/menuTextView"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="152dp"
+        android:text="FAST MODE" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/slowModeButton"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/menuTextView"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="289dp"
+        android:layout_marginEnd="98dp"
+        android:text="SLOW MODE" />
+
+
+</RelativeLayout>

@@ -28,7 +28,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Random;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends i ha {
 
     private ShapeableImageView[] main_IMG_hearts;
     private MaterialButton[] main_BTN_options;
