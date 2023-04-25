@@ -36,7 +36,7 @@ public class GameManager
 
     private int numOfHearts = 3;
 
-    private static final int DELAY = 500;
+    private int speedDelayChoice;
     long startTime = 0;
 
     private boolean randomRock1 = false;
@@ -50,7 +50,7 @@ public class GameManager
     private Context context;
 
 
-    public GameManager(ShapeableImageView[] main_IMG_hearts,ShapeableImageView[][] board,ShapeableImageView[][] coinBoard,MaterialTextView scoreBar,Context context)
+    public GameManager(ShapeableImageView[] main_IMG_hearts,ShapeableImageView[][] board,ShapeableImageView[][] coinBoard,MaterialTextView scoreBar,Context context,int gameSpeed)
     {
         this.board = board;
         this.main_IMG_hearts = main_IMG_hearts;
@@ -58,6 +58,7 @@ public class GameManager
         this.coinBoard = coinBoard;
         this.scoreBar = scoreBar;
         this.context = context;
+        this.speedDelayChoice = gameSpeed;
         carPosition = 2;
         initMediaPlayer(context);
         startTime();
@@ -197,7 +198,7 @@ public class GameManager
     {
         startTime = System.currentTimeMillis();
         if (timerForGame == null) {
-            timerForGame = new CountDownTimer(999999999, DELAY) {
+            timerForGame = new CountDownTimer(999999999, speedDelayChoice) {
                 @Override
                 public void onTick(long millisUntilFinished) {
                     moveRynosRowDown();
@@ -246,7 +247,7 @@ public class GameManager
 
     public void moveRight(View view)
     {
-        if(carPosition < 4)
+        if(carPosition < numOfLanes - 1)
         {
             board[7][carPosition].setVisibility(INVISIBLE);
             board[7][carPosition + 1].setVisibility(VISIBLE);

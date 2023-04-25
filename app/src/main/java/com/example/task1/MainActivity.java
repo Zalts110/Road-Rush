@@ -28,33 +28,16 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Random;
 
-public class MainActivity extends i ha {
+public class MainActivity extends AppCompatActivity {
 
     private ShapeableImageView[] main_IMG_hearts;
     private MaterialButton[] main_BTN_options;
     private ShapeableImageView[][] board;
-
-    private int numOfLanes = 5;
-    private CountDownTimer timerForGame;
-
-    private int maxRow = 7;
-    private int mistakeCount = 0;
-    private int numberOfHearts = 2;
-
-    private static final int DELAY = 500;
-    long startTime = 0;
-
-    private boolean randomRock1 = false;
-
     private AlertDialog.Builder gameOverAlert;
 
     private GameManager gManger;
     private ShapeableImageView[][] coinBoard;
-
     private MaterialTextView scoreBar;
-
-
-
 
 
 
@@ -67,7 +50,8 @@ public class MainActivity extends i ha {
         setContentView(R.layout.activity_main);
         gameOverAlert = new AlertDialog.Builder(this);
         findViews();
-        gManger = new GameManager(main_IMG_hearts,board,coinBoard,scoreBar,this.getApplicationContext());
+        int gameSpeed = getIntent().getIntExtra("MY_INT_SPEED", 0);
+        gManger = new GameManager(main_IMG_hearts,board,coinBoard,scoreBar,this.getApplicationContext(),gameSpeed);
 
     }
 
