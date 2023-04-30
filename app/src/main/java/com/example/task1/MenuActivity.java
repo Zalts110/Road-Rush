@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
 public class MenuActivity extends AppCompatActivity {
-    private AppCompatButton fastModeButton, slowModeButton;
+    private AppCompatButton fastModeButton, slowModeButton,leaderBoard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +20,17 @@ public class MenuActivity extends AppCompatActivity {
 
         fastModeButton = findViewById(R.id.fastModeButton);
         slowModeButton = findViewById(R.id.slowModeButton);
+        leaderBoard = findViewById(R.id.Leaderboard);
+
+
+        leaderBoard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),Leaderboard_Activitiy.class);
+                startActivity(intent);
+
+            }
+        });
 
         fastModeButton.setOnClickListener(new View.OnClickListener() {
             @Override

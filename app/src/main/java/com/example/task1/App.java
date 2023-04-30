@@ -9,7 +9,7 @@ public class App extends Application{
     public void onCreate(){
         super.onCreate();
 
- //       MySP3.init(this);
+        Sp.init(this);
         SignalGenerator.init(this);
 }
 }

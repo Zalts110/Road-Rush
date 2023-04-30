@@ -4,10 +4,15 @@ import static android.view.View.INVISIBLE;
 import static android.view.View.VISIBLE;
 
 
+import static java.security.AccessController.getContext;
+
+import android.app.Activity;
 import android.content.Context;
-import android.content.DialogInterface;
+
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -15,6 +20,12 @@ import androidx.appcompat.app.AlertDialog;
 
 import com.google.android.material.imageview.ShapeableImageView;
 import com.google.android.material.textview.MaterialTextView;
+import com.google.gson.Gson;
+
+import android.content.Intent;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 
 import java.util.Random;
 
@@ -48,6 +59,7 @@ public class GameManager
     private MediaPlayer mediaPlayer;
 
     private Context context;
+
 
 
     public GameManager(ShapeableImageView[] main_IMG_hearts,ShapeableImageView[][] board,ShapeableImageView[][] coinBoard,MaterialTextView scoreBar,Context context,int gameSpeed)
@@ -122,11 +134,12 @@ public class GameManager
     {
         if (mistakeCount > numberOfHearts)
         {
-            gameOver();
+           gameOver();
+
         }
 
 
-        for (int i = 0 ; i < numOfHearts; i++)
+        for (int i = 0 ; i < numOfLanes; i++)
         {
             if((board[7][i].getVisibility() == VISIBLE) && (board[6][i].getVisibility() == VISIBLE))
             {
@@ -147,23 +160,23 @@ public class GameManager
         }
         score += 1;
         scoreBar.setText(""+ score);
-    }
+}
+
     private void gameOver()
     {
         stopTimer();
-        gameOverAlert.setMessage("press Again for playing another round");
-        gameOverAlert.setCancelable(false);
-
-        gameOverAlert.setPositiveButton("AGAIN", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) { initGame();
-
-            }
-        });
-
-        AlertDialog message = gameOverAlert.create();
-        message.setTitle("You Lost");
-        message.show();
+        String fromSP =  Sp.getInstance().getString("com.example.task1","");
+        ScoreList scorelistFromJson = new Gson().fromJson(fromSP,ScoreList.class );
+        if(scorelistFromJson == null)
+        {
+            scorelistFromJson = new ScoreList();
+        }
+        scorelistFromJson.addScore(score + "");
+        Log.d("From JSON", scorelistFromJson.toString());
+        String scoreListJson = new Gson().toJson(scorelistFromJson);
+        Log.d("JSON", scoreListJson);
+        Sp.getInstance().putString("com.example.task1", scoreListJson);
+        returnToMenuActivity();
     }
     private void initGame()
     {
@@ -254,6 +267,15 @@ public class GameManager
             carPosition++;
         }
     }
+    public void returnToMenuActivity()
+    {
+        Intent intent = new Intent(context.getApplicationContext(),MenuActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
+
+    }
+
+
 
 }
 
