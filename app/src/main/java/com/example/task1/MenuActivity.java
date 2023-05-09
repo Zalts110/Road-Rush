@@ -66,6 +66,7 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        getLocationPermission();
     }
 
     private void getLocationPermission(){
