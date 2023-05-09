@@ -10,16 +10,12 @@ public class Leaderboard_Activitiy extends AppCompatActivity
     private ListFragment listFragment;
     private MapFragment mapFragment;
 
-    private void showUserLocation(String name) {
-        mapFragment.zoomOnUser(name);
-    }
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.leaderboard_screen);
         initFragments();
         beginTransactions();
-
-
 
     }
     private void initFragments() {
