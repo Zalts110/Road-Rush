@@ -10,6 +10,13 @@ public class Leaderboard_Activitiy extends AppCompatActivity
     private ListFragment listFragment;
     private MapFragment mapFragment;
 
+    MapCallback mapCallback = new MapCallback() {
+        @Override
+        public void clickOnRecord() {
+            mapFragment.getLocation();
+        }
+    };
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

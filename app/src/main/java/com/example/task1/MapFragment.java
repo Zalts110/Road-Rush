@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -35,7 +36,12 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         private static final String COURSE_LOCATION = Manifest.permission.ACCESS_COARSE_LOCATION;
         private static final int ERROR_DIALOG_REQUEST = 9001;
         private static final int MY_PERMISSIONS_REQUEST_FINE_LOCATION = 111;
+        private static final float ZOOM = 15f;
          private FusedLocationProviderClient mFusedLocationProviderClient;
+         private double latitude;
+        private double longtitude;
+        private View view;
+
 
 
 
@@ -48,7 +54,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
             return view;
 }
 
-    private void getDeviceLocation() {
+    public void getDeviceLocation() {
         mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this.getContext());
         try {
             Task location = mFusedLocationProviderClient.getLastLocation();
@@ -57,13 +63,16 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                 public void onComplete(@NonNull Task task) {
                     if (task.isSuccessful()) {
                         Location currentLocation = (Location) task.getResult();
-                        moveCamera(new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude()), 15f);
+                        setLatitude(currentLocation.getLatitude());
+                        setLongtitude(currentLocation.getLongitude());
+                        moveCamera(new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude()), ZOOM);
                     }
                 }
             });
         } catch (SecurityException e) {
             e.getMessage();
         }
+
     }
 
         private void moveCamera(LatLng latLng, float zoom){
@@ -85,24 +94,32 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
             }
         }
 
+        public void getLocation(){
+            FusedLocationProviderClient clientLocation = LocationServices.getFusedLocationProviderClient(view.getContext());
+            LatLng currentLocation = new LatLng(0, 0);
+            gMap.addMarker(new MarkerOptions()
+                    .position(currentLocation));
+            gMap.moveCamera(CameraUpdateFactory.newLatLng(currentLocation));
 
-//    @Override
-//    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-//            mLocationPermissionGranted = false;
-//
-//            switch (requestCode){
-//                case LOCATION_PERMISSION_REQUEST_CODE:{
-//                    if(grantResults.length > 0) {
-//                        for (int i = 0; i < grantResults.length; i++) {
-//                            if (grantResults[i] != PackageManager.PERMISSION_GRANTED) {
-//                                mLocationPermissionGranted = false;
-//                                return;
-//                            }
-//                        }
-//                        mLocationPermissionGranted = true;
-//                    }
-//                }
-//            }
-//    }
+        }
+
+
+    public void setLatitude(double latitude){
+        this.latitude = latitude;
+    }
+
+    public void setLongtitude(double longtitude){
+        this.longtitude = longtitude;
+    }
+
+    public double getLatitude(){
+        return this.latitude;
+    }
+
+    public double getLongtitude(){
+        return this.longtitude;
+    }
+
+
 }
 

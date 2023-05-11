@@ -48,7 +48,7 @@ public class ScoreList
         return "ScoreList{" +
                 "name='" + name + '\'' +
                 ", score =" + score +
-                ", movies=" + scoreList +
+                ", records =" + scoreList +
                 '}';
     }
 

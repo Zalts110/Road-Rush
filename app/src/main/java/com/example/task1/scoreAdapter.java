@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,17 +19,15 @@ public class scoreAdapter extends RecyclerView.Adapter<scoreAdapter.ScoreViewHol
 {
     private Context context;
     private ScoreList scores;
+    private MapCallback mapCallback;
 
 
 
     public scoreAdapter(Context context, ScoreList scores) {
         this.context = context;
         this.scores = scores;
+        this.mapCallback = mapCallback;
     }
-
-//    public void setMovieCallback(MovieCallback movieCallback) {
-//        this.movieCallback = movieCallback;
-//    }
 
     @NonNull
     @Override
@@ -40,11 +39,16 @@ public class scoreAdapter extends RecyclerView.Adapter<scoreAdapter.ScoreViewHol
 
     @Override
     public void onBindViewHolder(@NonNull ScoreViewHolder holder, int position) {
-//        Score score = getItem(position);
         Log.d("TAG", "onBindViewHolder: " + scores.getScore().get(position));
         holder.highscore_score.setText(scores.getScore().get(position).getScore() + "");
-     //   ImageLoader.getInstance().loadImage(movie.getImage(), holder.movie_IMG_poster);
+        holder.score_layout.setOnClickListener(v -> scoreClick());
 
+    }
+
+    private void scoreClick() {
+        if (mapCallback != null) {
+            mapCallback.clickOnRecord();
+        }
     }
 
     @Override
@@ -61,6 +65,7 @@ public class scoreAdapter extends RecyclerView.Adapter<scoreAdapter.ScoreViewHol
         private ShapeableImageView thropy_icon;
         private MaterialTextView highscore_score;
         private MaterialTextView highscore_title;
+        private RelativeLayout score_layout;
 
 
         public ScoreViewHolder(@NonNull View itemView) {
@@ -68,12 +73,8 @@ public class scoreAdapter extends RecyclerView.Adapter<scoreAdapter.ScoreViewHol
             highscore_title = itemView.findViewById(R.id.highscore_title);
             thropy_icon = itemView.findViewById(R.id.thropy_icon);
             highscore_score = itemView.findViewById(R.id.highscore_score);
-
-//            itemView.setOnClickListener(v -> {
-//                if (movieCallback != null)
-//                    movieCallback.itemClicked(getItem(getAdapterPosition()), getAdapterPosition());
-//            });
-
+            score_layout = itemView.findViewById(R.id.score_layout);
         }
+
     }
 }

@@ -24,6 +24,8 @@ public class ListFragment extends Fragment {
 
     private RecyclerView scoreListView;
     private ScoreList scoreList = new ScoreList();
+    private MapFragment mapFragment;
+    private MapCallback mapCallback;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -51,5 +53,8 @@ public class ListFragment extends Fragment {
     private void findViews (View view)
     {
         scoreListView = view.findViewById(R.id.mRecyclerView);
+    }
+    public void setMap_callback(MapCallback map_callback) {
+        this.mapCallback = mapCallback;
     }
 }

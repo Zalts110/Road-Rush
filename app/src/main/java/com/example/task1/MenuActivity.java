@@ -22,6 +22,7 @@ public class MenuActivity extends AppCompatActivity {
     public static boolean mLocationPermissionGranted = false;
 
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1234;
+    private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
 
 
 
@@ -69,16 +70,15 @@ public class MenuActivity extends AppCompatActivity {
         getLocationPermission();
     }
 
-    private void getLocationPermission(){
+    private void getLocationPermission() {
         String[] permissions = {android.Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};
-
-        if(ContextCompat.checkSelfPermission(this,FINE_LOCATION) == PackageManager.PERMISSION_GRANTED){
-            if(ContextCompat.checkSelfPermission(this,COURSE_LOCATION) == PackageManager.PERMISSION_GRANTED){
-                mLocationPermissionGranted = true;
-            }else{
-                ActivityCompat.requestPermissions(this,permissions,LOCATION_PERMISSION_REQUEST_CODE);
-            }
+        if((ContextCompat.checkSelfPermission(this,FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) && ContextCompat.checkSelfPermission(this,COURSE_LOCATION) == PackageManager.PERMISSION_GRANTED){
+            mLocationPermissionGranted = true;
         }
+        else{
+            ActivityCompat.requestPermissions(this,permissions,LOCATION_PERMISSION_REQUEST_CODE);
+}
+
     }
 
 

@@ -34,31 +34,23 @@ public class GameManager
     private ShapeableImageView[] main_IMG_hearts;
     private ShapeableImageView[][] board;
     private ShapeableImageView[][] coinBoard;
-
     private MaterialTextView scoreBar;
-
-
     private int numOfLanes = 5;
     private CountDownTimer timerForGame;
-
     private int maxRow = 7;
     private int mistakeCount = 0;
     private int numberOfHearts = 2;
-
     private int numOfHearts = 3;
-
     private int speedDelayChoice;
     long startTime = 0;
-
     private boolean randomRock1 = false;
 
-    private AlertDialog.Builder gameOverAlert;
+//    private AlertDialog.Builder gameOverAlert;
     private int carPosition;
     private int score = 0;
-
     private MediaPlayer mediaPlayer;
-
     private Context context;
+
 
 
 
@@ -135,6 +127,7 @@ public class GameManager
         if (mistakeCount > numberOfHearts)
         {
            gameOver();
+
 
         }
 
