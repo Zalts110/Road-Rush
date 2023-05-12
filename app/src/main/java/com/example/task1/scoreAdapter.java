@@ -23,7 +23,7 @@ public class scoreAdapter extends RecyclerView.Adapter<scoreAdapter.ScoreViewHol
 
 
 
-    public scoreAdapter(Context context, ScoreList scores) {
+    public scoreAdapter(Context context, ScoreList scores,MapCallback mapCallback) {
         this.context = context;
         this.scores = scores;
         this.mapCallback = mapCallback;
@@ -40,14 +40,16 @@ public class scoreAdapter extends RecyclerView.Adapter<scoreAdapter.ScoreViewHol
     @Override
     public void onBindViewHolder(@NonNull ScoreViewHolder holder, int position) {
         Log.d("TAG", "onBindViewHolder: " + scores.getScore().get(position));
+        Score score = getItem(position);
         holder.highscore_score.setText(scores.getScore().get(position).getScore() + "");
-        holder.score_layout.setOnClickListener(v -> scoreClick());
+        holder.score_layout.setOnClickListener(v -> scoreClick(scores.getScore().get(position).getLatitude(),scores.getScore().get(position).getLongtitude()));
 
     }
 
-    private void scoreClick() {
+    private void scoreClick(double latitude, double longtitude) {
+        Log.d("TAG","clickcheck" + mapCallback);
         if (mapCallback != null) {
-            mapCallback.clickOnRecord();
+            mapCallback.clickOnRecord( latitude, longtitude);
         }
     }
 

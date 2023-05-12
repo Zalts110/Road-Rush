@@ -3,8 +3,8 @@ package com.example.task1;
 public class Score implements Comparable<Score>
 {
     private String score = "";
-    private double latitude = 0;
-    private double longtitude = 0;
+    private double latitude;
+    private double longtitude;
 
     public Score() {
     }
@@ -35,12 +35,14 @@ public class Score implements Comparable<Score>
         int arrayScore = Integer.parseInt(this.getScore());
         return thisScore - arrayScore;
     }
-    public void setLatitude(double latitude){
+    public double setLatitude(double latitude){
         this.latitude = latitude;
+        return this.latitude;
     }
 
-    public void setLongtitude(double longtitude){
+    public double setLongtitude(double longtitude){
         this.longtitude = longtitude;
+        return this.longtitude;
     }
 
     public double getLatitude(){

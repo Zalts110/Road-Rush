@@ -39,7 +39,8 @@ public class ListFragment extends Fragment {
             scoreList = new ScoreList();
         }
         Collections.sort(scoreList.getScore());
-        scoreAdapter scoreAdapter = new scoreAdapter(view.getContext(), scoreList);
+        Log.d("Tag","mapcallback" + mapCallback);
+        scoreAdapter scoreAdapter = new scoreAdapter(view.getContext(), scoreList,mapCallback);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(view.getContext());
         linearLayoutManager.setOrientation(RecyclerView.VERTICAL);
         scoreListView.setLayoutManager(linearLayoutManager);
@@ -55,6 +56,6 @@ public class ListFragment extends Fragment {
         scoreListView = view.findViewById(R.id.mRecyclerView);
     }
     public void setMap_callback(MapCallback map_callback) {
-        this.mapCallback = mapCallback;
+        this.mapCallback = map_callback;
     }
 }

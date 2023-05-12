@@ -36,11 +36,13 @@ public class ScoreList
         return this;
     }
 
-    public void addScore(String newScore)
+    public void addScore(String newScore,double latitude, double longtitude)
     {
-        scoreList.add(new Score()
-                .setScore(newScore)
-        );
+        Score score = new Score();
+        score.setScore(newScore);
+        score.setLongtitude(longtitude);
+        score.setLatitude(latitude);
+        scoreList.add(score);
     }
 
     @Override

@@ -6,6 +6,7 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -63,8 +64,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                 public void onComplete(@NonNull Task task) {
                     if (task.isSuccessful()) {
                         Location currentLocation = (Location) task.getResult();
-                        setLatitude(currentLocation.getLatitude());
-                        setLongtitude(currentLocation.getLongitude());
                         moveCamera(new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude()), ZOOM);
                     }
                 }
@@ -75,9 +74,8 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 
     }
 
-        private void moveCamera(LatLng latLng, float zoom){
+        public void moveCamera(LatLng latLng, float zoom){
             gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, zoom));
-
             MarkerOptions options = new MarkerOptions().position(latLng);
             gMap.addMarker(options);
 }
@@ -95,12 +93,16 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         }
 
         public void getLocation(){
-            FusedLocationProviderClient clientLocation = LocationServices.getFusedLocationProviderClient(view.getContext());
             LatLng currentLocation = new LatLng(0, 0);
             gMap.addMarker(new MarkerOptions()
                     .position(currentLocation));
             gMap.moveCamera(CameraUpdateFactory.newLatLng(currentLocation));
 
+        }
+
+        public float getDefaultZoom()
+        {
+            return ZOOM;
         }
 
 

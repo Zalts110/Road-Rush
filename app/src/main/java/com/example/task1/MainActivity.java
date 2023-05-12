@@ -39,9 +39,6 @@ public class MainActivity extends AppCompatActivity {
     private ShapeableImageView[][] coinBoard;
     private MaterialTextView scoreBar;
 
-
-
-
     Random randomNumber;
 
     @Override
@@ -98,12 +95,6 @@ public class MainActivity extends AppCompatActivity {
     public void moveLeft(View view) {
       gManger.moveLeft(view);
     }
-
-
-
-
-
-
 
 
     }

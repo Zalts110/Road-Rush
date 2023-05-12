@@ -44,6 +44,10 @@
             android:name=".Leaderboard_Activitiy"
             android:exported="true"
             android:screenOrientation="portrait"/>
+        <activity
+            android:name=".SensorActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

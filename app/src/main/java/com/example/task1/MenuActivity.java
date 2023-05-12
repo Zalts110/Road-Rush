@@ -15,7 +15,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 public class MenuActivity extends AppCompatActivity {
-    private AppCompatButton fastModeButton, slowModeButton,leaderBoard;
+    private AppCompatButton fastModeButton, slowModeButton,leaderBoard,sensorMode;
 
     private static final String FINE_LOCATION =  android.Manifest.permission.ACCESS_FINE_LOCATION;
     private static final String COURSE_LOCATION = Manifest.permission.ACCESS_COARSE_LOCATION;
@@ -36,6 +36,16 @@ public class MenuActivity extends AppCompatActivity {
         fastModeButton = findViewById(R.id.fastModeButton);
         slowModeButton = findViewById(R.id.slowModeButton);
         leaderBoard = findViewById(R.id.Leaderboard);
+        sensorMode = findViewById(R.id.sensorModeButton);
+
+
+        sensorMode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),SensorActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
         leaderBoard.setOnClickListener(new View.OnClickListener() {

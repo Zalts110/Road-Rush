@@ -10,6 +10,9 @@ import android.app.Activity;
 import android.content.Context;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationManager;
 import android.media.MediaPlayer;
 import android.os.CountDownTimer;
 import android.util.Log;
@@ -25,6 +28,7 @@ import com.google.gson.Gson;
 import android.content.Intent;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 
 import java.util.Random;
@@ -45,11 +49,13 @@ public class GameManager
     long startTime = 0;
     private boolean randomRock1 = false;
 
-//    private AlertDialog.Builder gameOverAlert;
     private int carPosition;
     private int score = 0;
     private MediaPlayer mediaPlayer;
     private Context context;
+
+    private double latitude;
+    private double longitude;
 
 
 
@@ -158,17 +164,24 @@ public class GameManager
     private void gameOver()
     {
         stopTimer();
-        String fromSP =  Sp.getInstance().getString("com.example.task1","");
-        ScoreList scorelistFromJson = new Gson().fromJson(fromSP,ScoreList.class );
-        if(scorelistFromJson == null)
+        Score currentScore = makeScore();
+        if(currentScore.getLatitude() != 0.0 || currentScore.getLongtitude() != 0.0)
         {
-            scorelistFromJson = new ScoreList();
+            String fromSP =  Sp.getInstance().getString("com.example.task1","");
+            ScoreList scorelistFromJson = new Gson().fromJson(fromSP,ScoreList.class );
+            if(scorelistFromJson == null)
+            {
+                scorelistFromJson = new ScoreList();
+            }
+            scorelistFromJson.addScore(score + "",currentScore.getLatitude(),currentScore.getLongtitude());
+            Log.d("From JSON", scorelistFromJson.toString());
+            String scoreListJson = new Gson().toJson(scorelistFromJson);
+            Log.d("JSON", scoreListJson);
+            Sp.getInstance().putString("com.example.task1", scoreListJson);
+        }else{
+            SignalGenerator.getInstance().toast("Last known location is null", Toast.LENGTH_SHORT);
         }
-        scorelistFromJson.addScore(score + "");
-        Log.d("From JSON", scorelistFromJson.toString());
-        String scoreListJson = new Gson().toJson(scorelistFromJson);
-        Log.d("JSON", scoreListJson);
-        Sp.getInstance().putString("com.example.task1", scoreListJson);
+
         returnToMenuActivity();
     }
     private void initGame()
@@ -268,7 +281,45 @@ public class GameManager
 
     }
 
+    private Score makeScore() {
+        Score currScore = new Score();
+        currScore.setScore(score + "");
 
+        LocationManager locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
+
+        if (ActivityCompat.checkSelfPermission(context, android.Manifest.permission.ACCESS_FINE_LOCATION) !=
+                PackageManager.PERMISSION_GRANTED &&
+                ActivityCompat.checkSelfPermission(context, android.Manifest.permission.ACCESS_COARSE_LOCATION) !=
+                        PackageManager.PERMISSION_GRANTED) {
+            return null;
+        }
+
+        Location location = null;
+        if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+            location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+        }
+        if (location == null && locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
+            location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+        }
+        if (location == null && locationManager.isProviderEnabled(LocationManager.PASSIVE_PROVIDER)) {
+            location = locationManager.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
+        }
+
+        if (location != null) {
+           latitude = location.getLatitude();
+           longitude = location.getLongitude();
+        } else {
+            latitude = 0.0;
+            longitude = 0.0;
+        }
+
+        currScore.setLatitude(latitude);
+        currScore.setLongtitude(longitude);
+
+        return currScore;
+
+
+    }
 
 }
 

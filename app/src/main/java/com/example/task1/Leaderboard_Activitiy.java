@@ -1,9 +1,12 @@
 package com.example.task1;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.maps.model.LatLng;
 
 public class Leaderboard_Activitiy extends AppCompatActivity
 {
@@ -12,8 +15,10 @@ public class Leaderboard_Activitiy extends AppCompatActivity
 
     MapCallback mapCallback = new MapCallback() {
         @Override
-        public void clickOnRecord() {
-            mapFragment.getLocation();
+        public void clickOnRecord(double latitude, double longtitude) {
+            Log.d("TAG","firstcheck");
+            mapFragment.moveCamera(new LatLng(latitude, longtitude), mapFragment.getDefaultZoom());
+            //mapFragment.getLocation();
         }
     };
 
@@ -22,6 +27,7 @@ public class Leaderboard_Activitiy extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.leaderboard_screen);
         initFragments();
+        listFragment.setMap_callback(mapCallback);
         beginTransactions();
 
     }
