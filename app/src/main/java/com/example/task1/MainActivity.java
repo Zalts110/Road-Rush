@@ -39,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
     private ShapeableImageView[][] coinBoard;
     private MaterialTextView scoreBar;
 
-    private static final int soundCrash = R.raw.carcrashsound;
-    private static final int coindSound = R.raw.coinsound;
+    // private static final int soundCrash = R.raw.carcrashsound;
+    //private static final int coindSound = R.raw.coinsound;
 
     Random randomNumber;
 
@@ -122,13 +122,7 @@ public class MainActivity extends AppCompatActivity {
       gManger.moveLeft(view);
     }
 
-    public static int getSoundcrash(){
-        return soundCrash;
-    }
 
-    public static int getCoindSound(){
-        return coindSound;
-    }
 
 
     }

@@ -45,19 +45,5 @@ public class SignalGenerator {
         }
     }
 
-    public void makeCrashSound(int sound){
-        mediaPlayer.release();
-        mediaPlayer = MediaPlayer.create(context,sound);
-        if(sound == MainActivity.getSoundcrash())
-            mediaPlayer.setVolume(0.7f,0.7f);
-        mediaPlayer.start();
-    }
 
-    public void makeCoindSound(int sound){
-        mediaPlayer.release();
-        mediaPlayer = MediaPlayer.create(context,sound);
-        if(sound == MainActivity.getCoindSound())
-            mediaPlayer.setVolume(0.7f,0.7f);
-        mediaPlayer.start();
-    }
 }

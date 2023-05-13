@@ -18,16 +18,13 @@
         android:textColor="@android:color/white"/>
 
 
-    fastModeButton
-
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/fastModeButton"
         android:layout_width="192dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/menuTextView"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="395dp"
-        android:layout_marginEnd="126dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
         android:background="@android:color/white"
         android:text="FAST MODE"
         android:textSize="24sp"
@@ -37,10 +34,9 @@
         android:id="@+id/slowModeButton"
         android:layout_width="192dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/menuTextView"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="334dp"
-        android:layout_marginEnd="126dp"
+        android:layout_below="@+id/fastModeButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
         android:background="@android:color/white"
         android:text="SLOW MODE"
         android:textSize="24sp"
@@ -50,10 +46,9 @@
         android:id="@+id/sensorModeButton"
         android:layout_width="192dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/menuTextView"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="468dp"
-        android:layout_marginEnd="126dp"
+        android:layout_below="@+id/slowModeButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
         android:background="@android:color/white"
         android:text="SENSOR MODE"
         android:textSize="24sp"
@@ -63,24 +58,21 @@
         android:id="@+id/Leaderboard"
         android:layout_width="195dp"
         android:layout_height="59dp"
-        android:layout_below="@+id/menuTextView"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="532dp"
-        android:layout_marginEnd="126dp"
+        android:layout_below="@+id/sensorModeButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
         android:background="@android:color/white"
         android:text="Leaderboard"
         android:textSize="24sp"
         android:textStyle="bold" />
 
-    <!--    <ImageView-->
-<!--        android:id="@+id/myImage"-->
-<!--        android:layout_width="200dp"-->
-<!--        android:layout_height="200dp"-->
-<!--        android:layout_below="@+id/fastModeButton"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_marginTop="-344dp"-->
-<!--        android:layout_marginEnd="106dp"-->
-<!--        android:src="@drawable/ic_icon_ryno_white" />-->
-
+    <ImageView
+        android:id="@+id/myImage"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@+id/Leaderboard"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/ic_icon_ryno_white" />
 
 </RelativeLayout>

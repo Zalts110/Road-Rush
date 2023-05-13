@@ -46,11 +46,11 @@ public class RotationDetector {
     private void calculateStep(float x, float y) {
         if (System.currentTimeMillis() - timestamp > 500) {
             timestamp = System.currentTimeMillis();
-            if (x > 6.0) {
+            if (x > 3.0) {
                 if (rotationCallback != null)
                     rotationCallback.stepX();
             }
-            if (x < -6.0) {
+            if (x < -3.0) {
                 if (rotationCallback != null)
                     rotationCallback.stepY();
             }

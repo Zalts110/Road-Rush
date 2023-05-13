@@ -21,7 +21,7 @@ public class SensorActivity extends AppCompatActivity {
     private GameManager gManger;
     private ShapeableImageView[][] coinBoard;
     private MaterialTextView scoreBar;
-    private static final int DEFAULT_SPEED = 1000;
+    private static final int DEFAULT_SPEED = 500;
     private RotationDetector rotationDetector;
 
     Random randomNumber;
