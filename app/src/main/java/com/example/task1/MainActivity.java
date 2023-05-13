@@ -39,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
     private ShapeableImageView[][] coinBoard;
     private MaterialTextView scoreBar;
 
+    private static final int soundCrash = R.raw.carcrashsound;
+    private static final int coindSound = R.raw.coinsound;
+
     Random randomNumber;
 
     @Override
@@ -86,14 +89,45 @@ public class MainActivity extends AppCompatActivity {
         };
     }
 
+    @Override
+    protected void onPause() {
+        gManger.stopTimer();
+        super.onPause();
+    }
+
+   @Override
+    protected void onResume() {
+        gManger.startTime();
+        super.onResume();
+    }
+
+    @Override
+    protected void onDestroy() {
+        gManger.stopTimer();
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onStop() {
+        gManger.stopTimer();
+        super.onStop();
+}
 
 
-    public void moveRight(View view) {
+        public void moveRight(View view) {
        gManger.moveRight(view);
     }
 
     public void moveLeft(View view) {
       gManger.moveLeft(view);
+    }
+
+    public static int getSoundcrash(){
+        return soundCrash;
+    }
+
+    public static int getCoindSound(){
+        return coindSound;
     }
 
 

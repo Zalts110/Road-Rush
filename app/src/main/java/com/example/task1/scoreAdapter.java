@@ -13,8 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.imageview.ShapeableImageView;
 import com.google.android.material.textview.MaterialTextView;
 
-import java.util.ArrayList;
-
 public class scoreAdapter extends RecyclerView.Adapter<scoreAdapter.ScoreViewHolder>
 {
     private Context context;
@@ -39,10 +37,10 @@ public class scoreAdapter extends RecyclerView.Adapter<scoreAdapter.ScoreViewHol
 
     @Override
     public void onBindViewHolder(@NonNull ScoreViewHolder holder, int position) {
-        Log.d("TAG", "onBindViewHolder: " + scores.getScore().get(position));
+        Log.d("TAG", "onBindViewHolder: " + scores.getScores().get(position));
         Score score = getItem(position);
-        holder.highscore_score.setText(scores.getScore().get(position).getScore() + "");
-        holder.score_layout.setOnClickListener(v -> scoreClick(scores.getScore().get(position).getLatitude(),scores.getScore().get(position).getLongtitude()));
+        holder.highscore_score.setText(scores.getScores().get(position).getScore() + "");
+        holder.score_layout.setOnClickListener(v -> scoreClick(scores.getScores().get(position).getLatitude(),scores.getScores().get(position).getLongtitude()));
 
     }
 
@@ -55,11 +53,11 @@ public class scoreAdapter extends RecyclerView.Adapter<scoreAdapter.ScoreViewHol
 
     @Override
     public int getItemCount() {
-        return this.scores == null ? 0 : scores.getScore().size();
+        return this.scores == null ? 0 : scores.getScores().size();
     }
 
     private Score getItem(int position) {
-        return this.scores.getScore().get(position);
+        return this.scores.getScores().get(position);
     }
 
     public class ScoreViewHolder extends RecyclerView.ViewHolder {

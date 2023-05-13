@@ -21,7 +21,7 @@ public class ScoreList
         return this;
     }
 
-    public ArrayList<Score> getScore() {
+    public ArrayList<Score> getScores() {
         return scoreList;
     }
 
@@ -38,6 +38,16 @@ public class ScoreList
 
     public void addScore(String newScore,double latitude, double longtitude)
     {
+        if (scoreList.size() == 10) {
+            int minScoreIndex = 0;
+            for (int i = 1; i < scoreList.size(); i++) {
+                if (scoreList.get(i).getScore().compareTo(scoreList.get(minScoreIndex).getScore()) < 0) {
+                    minScoreIndex = i;
+                }
+            }
+            scoreList.remove(minScoreIndex);
+        }
+
         Score score = new Score();
         score.setScore(newScore);
         score.setLongtitude(longtitude);

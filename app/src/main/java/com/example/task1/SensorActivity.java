@@ -22,6 +22,7 @@ public class SensorActivity extends AppCompatActivity {
     private ShapeableImageView[][] coinBoard;
     private MaterialTextView scoreBar;
     private static final int DEFAULT_SPEED = 1000;
+    private RotationDetector rotationDetector;
 
     Random randomNumber;
 
@@ -41,7 +42,7 @@ public class SensorActivity extends AppCompatActivity {
                 gManger.moveRight(null);
             }
         };
-        RotationDetector rotationDetector = new RotationDetector(this.getApplicationContext(),rotationCallback);
+        rotationDetector = new RotationDetector(this.getApplicationContext(),rotationCallback);
         gManger = new GameManager(main_IMG_hearts,board,coinBoard,scoreBar,this.getApplicationContext(),DEFAULT_SPEED);
 
     }
@@ -75,6 +76,33 @@ public class SensorActivity extends AppCompatActivity {
                 {findViewById(R.id.coinSensor_6_0), findViewById(R.id.coinSensor_6_1), findViewById(R.id.coinSensor_6_2),findViewById(R.id.coinSensor_6_3),findViewById(R.id.coinSensor_6_4)},
 
         };
+    }
+
+    @Override
+    protected void onPause() {
+        gManger.stopTimer();
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        gManger.startTime();
+        if(rotationDetector != null)
+            rotationDetector.start();
+        super.onResume();
+    }
+
+    @Override
+    protected void onDestroy() {
+        gManger.stopTimer();
+        rotationDetector.stop();
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onStop() {
+        gManger.stopTimer();
+        super.onStop();
     }
 
     public void moveRight(View view) {

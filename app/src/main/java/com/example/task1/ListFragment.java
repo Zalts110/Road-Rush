@@ -3,7 +3,6 @@ package com.example.task1;
 
 import android.os.Bundle;
 
-import androidx.appcompat.widget.AppCompatEditText;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,10 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-import com.google.android.material.button.MaterialButton;
 import com.google.gson.Gson;
 
-import java.util.Collection;
 import java.util.Collections;
 
 public class ListFragment extends Fragment {
@@ -38,7 +35,7 @@ public class ListFragment extends Fragment {
         {
             scoreList = new ScoreList();
         }
-        Collections.sort(scoreList.getScore());
+        Collections.sort(scoreList.getScores());
         Log.d("Tag","mapcallback" + mapCallback);
         scoreAdapter scoreAdapter = new scoreAdapter(view.getContext(), scoreList,mapCallback);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(view.getContext());

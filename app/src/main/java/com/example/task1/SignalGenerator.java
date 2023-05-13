@@ -1,6 +1,7 @@
 package com.example.task1;
 
 import android.content.Context;
+import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
@@ -11,6 +12,8 @@ public class SignalGenerator {
     private static SignalGenerator instance = null;
     private Context context;
     private static Vibrator vibrator;
+    private static MediaPlayer mediaPlayer;
+
 
     private SignalGenerator(Context context) {
         this.context = context;
@@ -40,5 +43,21 @@ public class SignalGenerator {
             //deprecated in API 26
             vibrator.vibrate(length);
         }
+    }
+
+    public void makeCrashSound(int sound){
+        mediaPlayer.release();
+        mediaPlayer = MediaPlayer.create(context,sound);
+        if(sound == MainActivity.getSoundcrash())
+            mediaPlayer.setVolume(0.7f,0.7f);
+        mediaPlayer.start();
+    }
+
+    public void makeCoindSound(int sound){
+        mediaPlayer.release();
+        mediaPlayer = MediaPlayer.create(context,sound);
+        if(sound == MainActivity.getCoindSound())
+            mediaPlayer.setVolume(0.7f,0.7f);
+        mediaPlayer.start();
     }
 }

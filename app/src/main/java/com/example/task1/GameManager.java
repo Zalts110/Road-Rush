@@ -144,6 +144,7 @@ public class GameManager
             {
                 main_IMG_hearts[numberOfHearts - mistakeCount].setVisibility(INVISIBLE);
                 mistakeCount++;
+                //SignalGenerator.getInstance().makeCrashSound(MainActivity.getSoundcrash());
                 crashSoundStarter();
 
                 SignalGenerator.getInstance().toast("CRUSH!", Toast.LENGTH_SHORT);
@@ -154,6 +155,7 @@ public class GameManager
             {
                 score += 10;
                 scoreBar.setText("" + score);
+                //SignalGenerator.getInstance().makeCoindSound(MainActivity.getCoindSound());
                 coinSoundStarter();
             }
         }
@@ -211,9 +213,9 @@ public class GameManager
         score = 0;
         timerForGame.start();
     }
-    private void stopTimer(){timerForGame.cancel();}
+    public void stopTimer(){timerForGame.cancel();}
 
-    private void startTime()
+    public void startTime()
     {
         startTime = System.currentTimeMillis();
         if (timerForGame == null) {
