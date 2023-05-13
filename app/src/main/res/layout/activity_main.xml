@@ -213,8 +213,8 @@
             android:layout_column="3"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
-            android:scaleX="1"
-            android:scaleY="1"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
             android:visibility="invisible"
             app:srcCompat="@drawable/ic_icon_ryno_white"
             tools:visibility="visible" />
