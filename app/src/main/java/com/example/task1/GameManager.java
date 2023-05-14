@@ -4,9 +4,6 @@ import static android.view.View.INVISIBLE;
 import static android.view.View.VISIBLE;
 
 
-import static java.security.AccessController.getContext;
-
-import android.app.Activity;
 import android.content.Context;
 
 import android.content.Intent;
@@ -19,15 +16,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AlertDialog;
-
 import com.google.android.material.imageview.ShapeableImageView;
 import com.google.android.material.textview.MaterialTextView;
 import com.google.gson.Gson;
 
-import android.content.Intent;
-
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 
@@ -166,7 +158,7 @@ public class GameManager
     private void gameOver()
     {
         stopTimer();
-        Score currentScore = makeScore();
+        Score currentScore = makeLocationForScore();
         if(currentScore.getLatitude() != 0.0 || currentScore.getLongtitude() != 0.0)
         {
             String fromSP =  Sp.getInstance().getString("com.example.task1","");
@@ -213,7 +205,11 @@ public class GameManager
         score = 0;
         timerForGame.start();
     }
-    public void stopTimer(){timerForGame.cancel();}
+    public void stopTimer(){
+        if(timerForGame != null)
+            timerForGame.cancel();
+        timerForGame = null;
+    }
 
     public void startTime()
     {
@@ -283,7 +279,7 @@ public class GameManager
 
     }
 
-    private Score makeScore() {
+    private Score makeLocationForScore() {
         Score currScore = new Score();
         currScore.setScore(score + "");
 

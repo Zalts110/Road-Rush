@@ -38,7 +38,6 @@ public class MenuActivity extends AppCompatActivity {
         leaderBoard = findViewById(R.id.Leaderboard);
         sensorMode = findViewById(R.id.sensorModeButton);
 
-
         sensorMode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,6 +53,7 @@ public class MenuActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(),Leaderboard_Activitiy.class);
                 startActivity(intent);
 
+
             }
         });
 
@@ -65,6 +65,7 @@ public class MenuActivity extends AppCompatActivity {
                 intent.putExtra("MY_INT_SPEED",gameSpeed);
                 startActivity(intent);
 
+
             }
         });
 
@@ -75,6 +76,7 @@ public class MenuActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(),MainActivity.class);
                 intent.putExtra("MY_INT_SPEED",gameSpeed);
                 startActivity(intent);
+
             }
         });
         getLocationPermission();

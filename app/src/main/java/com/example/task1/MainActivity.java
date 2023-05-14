@@ -114,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
 }
 
 
+
         public void moveRight(View view) {
        gManger.moveRight(view);
     }

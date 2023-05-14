@@ -25,7 +25,7 @@
         android:layout_below="@+id/menuTextView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
-        android:background="@android:color/white"
+        android:background="#4958C5"
         android:text="FAST MODE"
         android:textSize="24sp"
         android:textStyle="bold" />
@@ -37,7 +37,7 @@
         android:layout_below="@+id/fastModeButton"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
-        android:background="@android:color/white"
+        android:background="#4958C5"
         android:text="SLOW MODE"
         android:textSize="24sp"
         android:textStyle="bold" />
@@ -49,7 +49,7 @@
         android:layout_below="@+id/slowModeButton"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
-        android:background="@android:color/white"
+        android:background="#4958C5"
         android:text="SENSOR MODE"
         android:textSize="24sp"
         android:textStyle="bold" />
@@ -61,7 +61,7 @@
         android:layout_below="@+id/sensorModeButton"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
-        android:background="@android:color/white"
+        android:background="#4958C5"
         android:text="Leaderboard"
         android:textSize="24sp"
         android:textStyle="bold" />
