@@ -13,6 +13,7 @@ Once you've completed a game, you can check out the Leadrboard to see the high s
 # Installation
 
 To install and run Road Rush on Android Studio, clone the repository from the following GitHub link:
+
 https://github.com/Zalts110/Road-Rush.git
 
 # Launch
