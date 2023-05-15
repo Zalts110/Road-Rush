@@ -1,4 +1,4 @@
-#Welcome to Road Rush!
+#Welcome to Road Rush!#
 
 Road Rush is an adrenaline-pumping game where you take on the challenge of driving a car on a 5-lane road while avoiding obstacles and collecting coins to score points. Every second you survive adds one point to your score, and collecting coins adds ten points each. But be careful! Colliding with obstacles will cost you one life, and you only have three lives in a game.
 
